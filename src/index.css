@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply text-slate-900 antialiased font-sans;
+    /* Linhas de fundo: visíveis mas discretas (opacidade baixa) */
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 39px,
+        rgb(148 163 184 / 0.06) 39px,
+        rgb(148 163 184 / 0.06) 40px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0,
+        transparent 39px,
+        rgb(148 163 184 / 0.06) 39px,
+        rgb(148 163 184 / 0.06) 40px
+      ),
+      radial-gradient(
+        ellipse 120% 100% at 50% 0%,
+        #FCFCFD 0%,
+        #F8F9FA 40%,
+        #F4F5F7 70%,
+        #F0F2F4 100%
+      );
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    background-position: 0 0, 0 0, 0 0;
+    min-height: 100vh;
+  }
+}
